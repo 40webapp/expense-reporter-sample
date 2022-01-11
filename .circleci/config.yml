@@ -25,6 +25,8 @@ jobs:
             chmod 600 /server.key &&
             exec /docker-entrypoint.sh -c ssl=on -c ssl_cert_file=/server.crt -c ssl_key_file=/server.key
           '
+    resource_class: medium
+    parallelism: 1
 
     steps:
       - checkout
